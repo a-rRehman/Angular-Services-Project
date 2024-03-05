@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, Injectable } from "@angular/core";
 import { UserService } from "../Services/user.service";
 
 @Component({

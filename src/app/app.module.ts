@@ -1,15 +1,18 @@
-import { NgModule, InjectionToken } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, InjectionToken } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './header/home/home.component';
-import { AdminComponent } from './header/admin/admin.component';
-import { HeroComponent } from './header/home/hero/hero.component';
-import { SidebarComponent } from './header/home/sidebar/sidebar.component';
-import { UserListComponent } from './header/admin/user-list/user-list.component';
-import { FormsModule } from '@angular/forms';
-import { UserDetailComponent } from './header/admin/user-detail/user-detail.component';
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { HomeComponent } from "./header/home/home.component";
+import { AdminComponent } from "./header/admin/admin.component";
+import { HeroComponent } from "./header/home/hero/hero.component";
+import { SidebarComponent } from "./header/home/sidebar/sidebar.component";
+import { UserListComponent } from "./header/admin/user-list/user-list.component";
+import { FormsModule } from "@angular/forms";
+import { UserDetailComponent } from "./header/admin/user-detail/user-detail.component";
+import { SubscribeService } from "./header/Services/subscribe.service";
+import { UserService } from "./header/Services/user.service";
+import { LoggerService } from "./header/Services/logger.service";
 
 @NgModule({
   declarations: [
@@ -22,11 +25,8 @@ import { UserDetailComponent } from './header/admin/user-detail/user-detail.comp
     UserListComponent,
     UserDetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule],
+  providers: [SubscribeService, UserService, LoggerService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
