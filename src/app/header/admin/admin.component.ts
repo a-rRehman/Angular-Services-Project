@@ -1,5 +1,6 @@
 import { Component, Inject, Injectable } from "@angular/core";
 import { UserService } from "../Services/user.service";
+import { USER_TOKEN } from "src/app/app.module";
 
 @Component({
   selector: "app-admin",
@@ -11,7 +12,7 @@ export class AdminComponent {
   gender: string = "Male";
   subType: string = "Yearly";
   status: string = "Active";
-  constructor(private userService: UserService) {}
+  constructor(@Inject(USER_TOKEN) private userService: UserService) {}
   addingUser() {
     this.userService.CreateUser(
       this.name,
